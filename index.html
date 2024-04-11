@@ -1,0 +1,103 @@
+<html> 
+  <head>
+    <title>Your Random Color</title> 
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<!-- Roboto is used from Google Fonts, to provide text elements on this web page.   -->  
+
+</head>
+
+  
+
+  <body> 
+
+    
+    <div id="fill_everything">
+      <!-- fill_everything div fills the whole screen, and 
+           if it is clicked on, the color changes.  -->
+      
+           <div id="black_border">
+            <!-- This is the outer black border, in addition
+                 to the background color itself. -->
+
+        <div id="bubble_wrapper">
+            <!-- This wrapper holds the two text divs. 
+                  Having this wrapper made it easier to center the two text divs.  -->
+
+          <div id="bubble_1"><h1>YOUR RANDOM COLOR</h1></div>
+              <!-- bubble_1 is the first text div. -->
+
+          <div id="bubble_2"><h1 id="the_code">CLICK THE SCREEN</h1></div>
+              <!-- bubble_2 is the second text div.   -->
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Here we have the JavaScript code to randomize the color.  -->
+    <script>
+      document.getElementById("fill_everything").addEventListener("click", randColor);
+      document.getElementById("fill_everything").addEventListener("touchstart", randColor);
+      // If webpage is clicked or tapped on, the randColor function
+      // will randomly change the color. 
+
+      function randColor() {
+        
+        function numberToHex(oldNum) {
+
+          // numberToHex function converts any number 0 to 15 into an equal hexidemical string. 
+
+          if (oldNum == 0) {return "0";}
+          else if (oldNum == 1) {return "1";}
+          else if (oldNum == 2) {return "2";}
+          else if (oldNum == 3) {return "3";}
+          else if (oldNum == 4) {return "4";}
+          else if (oldNum == 5) {return "5";}
+          else if (oldNum == 6) {return "6";}
+          else if (oldNum == 7) {return "7";}
+          else if (oldNum == 8) {return "8";}
+          else if (oldNum == 9) {return "9";}
+          else if (oldNum == 10) {return "A";}
+          else if (oldNum == 11) {return "B";}
+          else if (oldNum == 12) {return "C";}
+          else if (oldNum == 13) {return "D";}
+          else if (oldNum == 14) {return "E";}
+          else if (oldNum == 15) {return "F";}
+          else {return "The matrix is real...";}
+
+          // I hope that nobody gets surprised by the matrix with this code. 
+
+        }
+
+        let a1 = Math.floor(Math.random() * 16);
+        let b1 = Math.floor(Math.random() * 16);
+        let c1 = Math.floor(Math.random() * 16);
+        let d1 = Math.floor(Math.random() * 16);
+        let e1 = Math.floor(Math.random() * 16);
+        let f1 = Math.floor(Math.random() * 16);
+        // Here we are creating six numbers, randomly generated. 
+
+        let a2 = numberToHex(a1);
+        let b2 = numberToHex(b1);
+        let c2 = numberToHex(c1);
+        let d2 = numberToHex(d1);
+        let e2 = numberToHex(e1);
+        let f2 = numberToHex(f1);
+        // Here we are converting each number into a single-letter string. 
+
+        // And this is where we create the completely random hexidecimal string. 
+        let master_code = "#" + a2 + b2 + c2 + d2 + e2 + f2;
+
+        document.getElementById("the_code").innerHTML = master_code;
+        // Here is where the text on the actual site is changed to reflect the new random color. 
+
+        document.getElementById("black_border").style = "background-color: " + master_code + ";";
+        // And here is where the background color is changed as well. 
+      }
+    </script>
+  </body>
+</html>

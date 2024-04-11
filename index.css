@@ -1,0 +1,173 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+This is where the significant code begins.
+*/
+
+body {
+
+	overflow: hidden;
+
+
+}
+
+#fill_everything {
+
+	width: 100%;
+	height: 100%;
+	background-color: white;
+
+
+}
+
+#black_border {
+
+	/* 
+	This is where the actual color is displayed. 
+	This includes the color background as well as a surrounding black border. 
+	*/
+
+	display: inline-block;
+
+	width: calc(100% - 6vh);
+	height: 94vh;
+	border: 1vh solid black;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	margin-left: 2vh;
+	margin-right: 2vw;
+	border-radius: .5vh;
+	/*
+	This should cause a web page that will always have a 2vh margin no matter how the window is re-sized. 
+	*/
+
+	position: relative;
+
+	background-color: white;
+}
+
+
+#bubble_1 {
+
+	/*
+	Bubble 1 holds the text "Your Random Color". 
+	*/
+
+	position: absolute;
+	width: 35vh;
+	height: 4vh;
+	border: 1vh solid black;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	margin-left: 1vh;
+	margin-right: 1vh;
+	border-radius: .5vh;
+
+	/*  
+	Bubbles 1 and 2 have a similar border compared to the border of #black_border. 
+	*/
+
+	top: calc(50% - 3.5vh);
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: white;
+}
+
+#bubble_2 {
+
+	/*
+	Bubble 2 holds the six digit hex code of the random color. 
+	*/
+
+	position: absolute;
+
+	width: 35vh;
+	height: 4vh;
+	border: 1vh solid black;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	margin-left: 1vh;
+	margin-right: 1vh;
+	border-radius: .5vh;
+
+	top: calc(50% + 3.5vh);
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: white;
+	/* The background color starts out as white, but will change.   */ 
+}
+
+h1 {
+
+	font-family: "Roboto", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 3vh;
+
+	position: absolute;
+	
+}
